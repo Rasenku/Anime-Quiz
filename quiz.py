@@ -17,3 +17,39 @@ Question4 = "How many members are there in the Akatsuki in Naruto"
 # True/False
 Question5 = """Avatar is considered an anime?"""
 # True
+
+
+
+
+
+def multiple_choice_question(question, answer):
+    print(question)
+    user_answer = input("Input a choice (a-e): \n").lower()
+    if user_answer == answer:
+        print("You are correct!")
+        return 1
+    else:
+        print("Incorrect, The answer is: ", answer)
+        return 0
+
+def numerical_question(question, answer):
+    print(question)
+    user_answer = input("Input a number: \n")
+    if user_answer == answer and user_answer.isdigit():
+        print("You are correct!")
+        return 1
+    # elif user_answer == answer and user_answer.isdigit == False:
+    #     print("Inproper format")
+    else:
+        print("Incorrect, The answer is: ", answer)
+        return 0
+
+def true_false_question(question, answer, fact):
+    print(colors.grey, question)
+    user_answer = input("Enter True(t) or False(f): \n").lower()
+    if user_answer == answer:
+        print("You are correct!")
+        return 1
+    else:
+        print("Incorrect, The answer is: ", answer, '\n', fact)
+        return 0
