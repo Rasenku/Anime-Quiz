@@ -53,3 +53,12 @@ def true_false_question(question, answer, fact):
     else:
         print("Incorrect, The answer is: ", answer, '\n', fact)
         return 0
+
+
+multiple_choice_question(Question1, 'The answer is e)')
+multiple_choice_question(Question2, 'The answer is d)')
+
+numerical_question(Question3, 'The is answer is 802')
+numerical_question(Question4, 'The answer is 10')
+
+true_false_question(Question5, 'True')
