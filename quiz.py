@@ -45,7 +45,7 @@ def numerical_question(question, answer):
         return 0
 
 def true_false_question(question, answer, fact):
-    print(colors.grey, question)
+    print(question)
     user_answer = input("Enter True(t) or False(f): \n").lower()
     if user_answer == answer:
         print("You are correct!")
@@ -55,10 +55,10 @@ def true_false_question(question, answer, fact):
         return 0
 
 
-multiple_choice_question(Question1, 'The answer is e)')
-multiple_choice_question(Question2, 'The answer is d)')
+multiple_choice_question(Question1, 'e')
+multiple_choice_question(Question2, 'd')
 
-numerical_question(Question3, 'The is answer is 802')
-numerical_question(Question4, 'The answer is 10')
+numerical_question(Question3, '802')
+numerical_question(Question4, '10')
 
-true_false_question(Question5, 'True')
+true_false_question(Question5, 't', 'Its only considered an cartoon')
