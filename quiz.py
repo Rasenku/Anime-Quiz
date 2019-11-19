@@ -19,6 +19,7 @@ Question5 = """Avatar is considered an anime?"""
 # True
 
 
+score = 0
 
 
 
@@ -27,16 +28,23 @@ def multiple_choice_question(question, answer):
     user_answer = input("Input a choice (a-e): \n").lower()
     if user_answer == answer:
         print("You are correct!")
+        global score
+        score +=1
+        print (score)
         return 1
     else:
         print("Incorrect, The answer is: ", answer)
         return 0
+
 
 def numerical_question(question, answer):
     print(question)
     user_answer = input("Input a number: \n")
     if user_answer == answer and user_answer.isdigit():
         print("You are correct!")
+        global score
+        score +=1
+        print (score)
         return 1
     # elif user_answer == answer and user_answer.isdigit == False:
     #     print("Inproper format")
@@ -49,6 +57,9 @@ def true_false_question(question, answer, fact):
     user_answer = input("Enter True(t) or False(f): \n").lower()
     if user_answer == answer:
         print("You are correct!")
+        global score
+        score +=1
+        print (score)
         return 1
     else:
         print("Incorrect, The answer is: ", answer, '\n', fact)
@@ -62,3 +73,5 @@ numerical_question(Question3, '802')
 numerical_question(Question4, '10')
 
 true_false_question(Question5, 't', 'Its only considered an cartoon')
+
+print("Your total score is " + str(score) + " out of 5")
