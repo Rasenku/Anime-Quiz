@@ -17,7 +17,6 @@ Question4 = "How many members are there in the Akatsuki in Naruto"
 # True/False
 Question5 = """Avatar is considered an anime?"""
 # True
-
 questions_wrong = list()
 questions_right = list()
 score = 0
@@ -34,7 +33,6 @@ def multiple_choice_question(question, answer):
         return 1
     else:
         print("Incorrect, The answer is: ", answer)
-        score -=1
         questions_wrong.append("question 1 was wrong")
         return 0
 
@@ -50,7 +48,6 @@ def multiple_choice_questions(question, answer):
         return 1
     else:
         print("Incorrect, The answer is: ", answer)
-        score -=1
         questions_wrong.append("question 2 was wrong")
 
 
@@ -63,7 +60,7 @@ def numerical_question(question, answer):
             break
         except ValueError:
             print("Enter only a number stupid.")
-    if user_answer == answer and user_answer.isdigit():
+    if user_answer == answer:
         print("You are correct!")
         global score
         score +=1
@@ -73,7 +70,6 @@ def numerical_question(question, answer):
     #     print("Inproper format")
     else:
         print("Incorrect, The answer is: ", answer)
-        score -=1
         questions_wrong.append("question 3 was wrong")
         return 0
 
@@ -88,7 +84,7 @@ def numerical_questions(question, answer):
             break
         except ValueError:
             print("Enter only a number stupid.")
-    if user_answer == answer and user_answer.isdigit():
+    if user_answer == answer:
         print("You are correct!")
         global score
         score +=1
@@ -98,7 +94,6 @@ def numerical_questions(question, answer):
     #     print("Inproper format")
     else:
         print("Incorrect, The answer is: ", answer)
-        score -=1
         questions_wrong.append("question 4 was wrong")
         return 0
 
@@ -133,8 +128,11 @@ def summary():
 
 
 
-    if questions_wrong == 0:
+    if len(questions_wrong) == 0:
         print("                 ")
+        print(questions_right)
+    else:
+        print(questions_wrong)
         print(questions_right)
 
 
@@ -143,8 +141,8 @@ def anime_quiz():
     print("Quiz time! Let's test your knowledge of anime\n")
     multiple_choice_question(Question1, 'e')
     multiple_choice_questions(Question2, 'd')
-    numerical_question(Question3, '802')
-    numerical_questions(Question4, '10')
+    numerical_question(Question3, 802)
+    numerical_questions(Question4, 10)
     true_false_question(Question5, 't', 'Its only considered an cartoon')
     summary()
 
@@ -160,6 +158,5 @@ if __name__ == "__main__":
             questions_wrong = list()
             questions_right = list()
             score = 0
-            anime_quiz()
         else:
             playing = False
