@@ -30,10 +30,10 @@ def multiple_choice_question(question, answer):
         print("You are correct!")
         global score
         score +=1
-        print (score)
         return 1
     else:
         print("Incorrect, The answer is: ", answer)
+        score -=1
         return 0
 
 
@@ -44,12 +44,12 @@ def numerical_question(question, answer):
         print("You are correct!")
         global score
         score +=1
-        print (score)
         return 1
     # elif user_answer == answer and user_answer.isdigit == False:
     #     print("Inproper format")
     else:
         print("Incorrect, The answer is: ", answer)
+        score -=1
         return 0
 
 def true_false_question(question, answer, fact):
@@ -59,10 +59,10 @@ def true_false_question(question, answer, fact):
         print("You are correct!")
         global score
         score +=1
-        print (score)
         return 1
     else:
         print("Incorrect, The answer is: ", answer, '\n', fact)
+        score -=1
         return 0
 
 
@@ -74,4 +74,12 @@ numerical_question(Question4, '10')
 
 true_false_question(Question5, 't', 'Its only considered an cartoon')
 
-print("Your total score is " + str(score) + " out of 5")
+print("Your final score is " + str(score) + " out of 5")
+if score == 3:
+    print("You are a rising weeb")
+
+elif score == 5:
+    print("You are a full fledge weeb")
+else:
+    score < 3
+    print("You're not a weeb at all")
