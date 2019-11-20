@@ -22,10 +22,10 @@ questions_wrong = list()
 questions_right = list()
 score = 0
 
-
 def multiple_choice_question(question, answer):
     print(question)
     user_answer = input("Input a choice (a-e): \n").lower()
+    print(user_answer.isalpha())
     if user_answer == answer:
         print("You are correct!")
         global score
@@ -56,7 +56,13 @@ def multiple_choice_questions(question, answer):
 
 def numerical_question(question, answer):
     print(question)
-    user_answer = input("Input a number: \n")
+    while 1:
+        try:
+
+            user_answer = int(input("Input a number: \n"))
+            break
+        except ValueError:
+            print("Enter only a number stupid.")
     if user_answer == answer and user_answer.isdigit():
         print("You are correct!")
         global score
@@ -75,7 +81,13 @@ def numerical_question(question, answer):
 
 def numerical_questions(question, answer):
     print(question)
-    user_answer = input("Input a number: \n")
+    while 1:
+        try:
+
+            user_answer = int(input("Input a number: \n"))
+            break
+        except ValueError:
+            print("Enter only a number stupid.")
     if user_answer == answer and user_answer.isdigit():
         print("You are correct!")
         global score
